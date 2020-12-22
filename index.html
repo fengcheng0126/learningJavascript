@@ -4,12 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
-        .output {
+        /*.output {
             width: 200px;
             height: 200px;
             color: crimson;
             text-align: center;
-        }
+        }*/
     </style>
     <title>Document</title>
 </head>
@@ -19,6 +19,7 @@
     <script>
         const button = document.querySelector("button");
         const output = document.querySelector(".output");
+        output.setAttribute("style","color: #DC143C;width: 200px;height: 100px",);
         button.addEventListener("click",showOutput);
 
         function showOutput() {
@@ -29,12 +30,16 @@
 
             if (cur > 12) {
                 message = "It's past noon.";
+                output.style.backgroundColor = "Cyan";
             } else if (cur < 12) {
                 message = "It's morning.";
+                output.style.backgroundColor = "Goldenrod";
             } else if (cur > 18) {
                 message = "Its' evening";
+                output.style.backgroundColor = "Blue";
             } else {
                 message = "Time unknown";
+                output.style.backgroundColor = "Black";
                 console.log("error detected");
             }
 

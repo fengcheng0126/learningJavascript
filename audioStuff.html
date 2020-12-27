@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        .animal {
+            width: 150px;
+            height: 75px;
+            color: black;
+            text-align: center;
+            border: 2px solid aqua;
+            display: inline-block;
+            margin: 25px;
+        }
+    </style>
+    <title>Audio practice</title>
+</head>
+
+<body>
+
+    <div class="animal lion">Lion</div>
+    <div class="animal cougar">Cougar</div>
+    <div class="animal dog">Dog</div>
+
+    <script>
+        const animals = document.querySelectorAll(".animal");
+        console.log(animals);
+
+        for(let i = 0;i<animals.length;i++) {
+            animals[i].addEventListener("click",function() {
+                let animal = this.innerHTML;
+                console.log(animal);
+            })
+        }
+    </script>
+
+</body>
+</html>

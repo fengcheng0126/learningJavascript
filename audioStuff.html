@@ -13,6 +13,10 @@
             display: inline-block;
             margin: 25px;
         }
+        .active {
+            border: 2px solid red;
+            color: royalblue;
+        }
     </style>
     <title>Audio practice</title>
 </head>
@@ -21,7 +25,7 @@
 
     <div class="animal lion">Lion</div>
     <div class="animal cougar">Cougar</div>
-    <div class="animal dog">Dog</div>
+    <div class="animal dog">Bark</div>
 
     <script>
         const animals = document.querySelectorAll(".animal");
@@ -31,8 +35,19 @@
             animals[i].addEventListener("click",function() {
                 let animal = this.innerHTML;
                 let lowerAnimal = animal.toLowerCase();
-                makeSound(lowerAnimal);
+                //makeSound(lowerAnimal);
+                //addStyle(lowerAnimal);
+                playit(lowerAnimal)
             })
+        }
+
+        function addStyle(name) {
+            let activeEle = document.querySelector("."+name);
+            console.log(activeEle);
+            activeEle.classList.add("active");
+            setTimeout(function() {
+                activeEle.classList.remove("active");
+            },200)
         }
 
         function makeSound(name) {
@@ -46,7 +61,7 @@
                     let sound2 = new Audio("./audio/cougar.mp3");
                     sound2.play();
                 break;
-                case "dog":
+                case "bark":
                     let sound3 = new Audio("./audio/bark.mp3");
                     sound3.play();
                 break;
